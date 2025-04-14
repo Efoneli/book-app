@@ -3,6 +3,13 @@
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 
+
+type Book = {
+    id: string;
+    title: string;
+    author: string;
+  };
+
 export default function EditBookPage() {
   const { id } = useParams();
   const router = useRouter();
@@ -13,7 +20,7 @@ export default function EditBookPage() {
     fetch('/api/books')
       .then(res => res.json())
       .then(data => {
-        const book = data.find((b: any) => b.id === id);
+        const book = data.find((b: Book) => b.id === id);
         if (book) {
           setTitle(book.title);
           setAuthor(book.author);
