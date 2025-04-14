@@ -2,12 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-
-type Book = {
-  id: string;
-  title: string;
-  author: string;
-};
+import { Book } from './components/types';
 
 export default function HomePage() {
   const [books, setBooks] = useState<Book[]>([]);
@@ -25,7 +20,7 @@ export default function HomePage() {
 
   return (
     <main className="p-8">
-      <h1 className="text-2xl font-bold mb-4">📚 Book List</h1>
+      <h1 className="text-2xl font-bold mb-4">📚 Book app</h1>
       <Link href="/add" className="mb-6 inline-block text-blue-600 underline">
         ➕ Add a Book
       </Link>

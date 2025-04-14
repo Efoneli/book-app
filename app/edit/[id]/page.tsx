@@ -2,13 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-
-
-type Book = {
-    id: string;
-    title: string;
-    author: string;
-  };
+import { Book } from '../../components/types'
 
 export default function EditBookPage() {
   const { id } = useParams();
